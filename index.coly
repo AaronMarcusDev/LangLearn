@@ -1,5 +1,23 @@
 include "htmlgen.coly"
 
+macro appName { "LangLearn" }
+
+macro body {
+    "body" tag
+}
+
+macro cBody {
+    "body" cTag
+}
+
+macro head {
+    "head" tag
+}
+
+macro cHead {
+    "head" cTag
+}
+
 macro p {
     "p" wTag
 }
@@ -7,8 +25,13 @@ macro p {
 initHTML
 
 "<!DOCTYPE html>" pushHTML
-"html" tag
+
+appName "title" wTag
+
+cHead
+
+body
 
 "Hello, world! :)" p
 
-"html" cTag
+cBody

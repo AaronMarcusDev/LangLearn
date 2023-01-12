@@ -1,0 +1,14 @@
+include "htmlgen.coly"
+
+macro p {
+    "p" wTag
+}
+
+initHTML
+
+"<!DOCTYPE html>" pushHTML
+"html" tag
+
+"Hello, world! :)" p
+
+"html" cTag

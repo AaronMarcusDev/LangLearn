@@ -1,7 +1,10 @@
+// Libraries
 include "htmlgen.coly"
 
+// Consts
 macro appName { "LangLearn" }
 
+// Macros
 macro body {
     "body" tag
 }
@@ -19,19 +22,65 @@ macro cHead {
 }
 
 macro p {
-    "p" wTag
+    "p class='text'" tag
+    pushHTML
+    "p" cTag
 }
 
+macro h {
+    "h1 class='text'" tag
+    pushHTML
+    "h1" cTag
+}
+
+macro br {
+    "br" tag
+}
+
+macro centerDiv {
+    "div class='center'" tag
+}
+
+macro cCenterDiv {
+    "div" cTag
+}
+
+macro header {
+    "header" tag
+}
+
+macro cHeader {
+    "header" cTag
+}
+
+macro button {
+    "button class='button1'" tag
+    pushHTML
+    "button" cTag
+}
+
+// Entry | entry | main
 initHTML
 
 "<!DOCTYPE html>" pushHTML
 
+head
+"style.css" linkCSS
 appName "title" wTag
-
 cHead
 
 body
-
-"Hello, world! :)" p
+header
+"a href='index.html'" tag
+appName button
+"a" cTag
+cHeader
+centerDiv
+appName h
+"A new way of learning languages!" p
+"a href='langlist.html'" tag
+"Start Learning! ➡️" button
+'a' cTag
+cCenterDiv
 
 cBody
